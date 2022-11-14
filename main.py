@@ -53,7 +53,7 @@ if user_menu == 'Recommender System':
 if user_menu == 'Top 10\'s':
   option = ['Top 10 Most Popular', 'Top 10 Highest Vote']
   select = st.selectbox('Filter', option)
-  if select == 'Top 10 Popular':
+  if select == 'Top 10 Most Popular':
     helper.add_bg_from_url()
     new_title = '<p style="font-family:sans-serif; color:White; font-size: 40px;">Top 10 Movies based on Popularity</p>'
     st.markdown(new_title, unsafe_allow_html=True)
@@ -62,7 +62,7 @@ if user_menu == 'Top 10\'s':
     cols = cycle(st.columns(4)) # st.columns here since it is out of beta at the time I'm writing this
     for idx, filteredImage in enumerate(posters):
         next(cols).image(filteredImage, width=150, caption=names[idx])
-  if select == 'Top 10 Votes':
+  if select == 'Top 10 Highest Vote':
     helper.add_bg_from_url()
     new_title = '<p style="font-family:sans-serif; color:White; font-size: 40px;">Top 10 Movies based on Votes</p>'
     st.markdown(new_title, unsafe_allow_html=True)
